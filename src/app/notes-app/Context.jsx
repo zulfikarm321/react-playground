@@ -1,7 +1,21 @@
 'use client';
 
+function getItem(key) {
+  const item = window.localStorage.getItem(key);
+  return JSON.parse(item);
+}
+
+function setItem(key, value) {
+  const item = JSON.stringify(value);
+  window.localStorage.setItem(key, item);
+}
+
+function removeItem(key) {
+  window.localStorage.removeItem(key);
+}
+
 import { initialNotes } from '@/data/initialNotes';
-import { getItem, setItem } from '@/utils/localstorage';
+// import { getItem, setItem } from '@/utils/localstorage';
 import { createContext, useContext, useState, useEffect } from 'react';
 
 export const NoteContext = createContext({
