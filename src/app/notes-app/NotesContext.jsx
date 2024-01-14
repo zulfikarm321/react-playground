@@ -36,14 +36,6 @@ export const NotesContextProvider = ({ children }) => {
     getFromLocalStorage();
   }, []);
 
-  // useEffect(() => {
-  //   setNotes((prevNotes) => {
-  //     const updatedNotes = [...prevNotes];
-  //     setItem('notes', updatedNotes);
-  //     return updatedNotes;
-  //   });
-  // }, [notes]);
-
   const addNotes = (newNote) => {
     const updatedNotes = [...notes, newNote];
 
