@@ -1,6 +1,6 @@
 export function getItem(key) {
   const item = window.localStorage.getItem(key);
-  return JSON.parse(item);
+  return item ? JSON.parse(item) : null;
 }
 
 export function setItem(key, value) {

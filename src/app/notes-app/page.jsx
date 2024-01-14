@@ -1,22 +1,20 @@
-'use client';
-
 import BreadCrumbs from '@/components/BreadCrumbs';
+import { NotesContextProvider } from './NotesContext';
 
-import { NoteContextProvider } from './Context';
-import FormNotes from './components/FormNotes';
-import DetailNotes from './components/DetailNotes';
+import NoteDetail from './components/NoteDetail';
+import NotesInputForm from './components/NotesInputForm';
 import NotesList from './components/NotesList';
-import NotesHeader from './components/NotesHeader';
 
 const NotesApp = () => {
   return (
-    <NoteContextProvider>
-      <BreadCrumbs name={'Notes App'} />
-      <NotesHeader />
-      <FormNotes />
-      <DetailNotes />
-      <NotesList />
-    </NoteContextProvider>
+    <div>
+      <NotesContextProvider>
+        <BreadCrumbs name="Notes App" />
+        <NotesInputForm />
+        <NoteDetail />
+        <NotesList />
+      </NotesContextProvider>
+    </div>
   );
 };
 
